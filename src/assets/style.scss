@@ -135,6 +135,10 @@ form {
     }
 }
 
+#result-root {
+    width: 100%;
+}
+
 .result-wrapper {
     width: 100%;
     max-width: $max-width;
@@ -152,6 +156,7 @@ form {
     }
 
     .result {
+        width: 100%;
         padding: 1rem;
         font-family: 'Courier New', Courier, monospace;
         font-size: .8rem;

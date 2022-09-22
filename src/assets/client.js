@@ -3,7 +3,8 @@ function render_result(res) {
         res = JSON.stringify(res, null, 2);
     }
 
-    const wrapper = document.querySelector('.result-wrapper');
+    const root = document.querySelector('#result-root');
+    const wrapper = root.querySelector('.result-wrapper');
     wrapper.innerHTML = "";
 
     const h3 = document.createElement('h3');
@@ -28,15 +29,15 @@ function init() {
         const raw = document.querySelector('input[type=text]').value;
         const query = encodeURIComponent(raw);
         
-        let result_wrapper = document.querySelector('.result-wrapper');
+        const root = document.querySelector('#result-root');
+        let result_wrapper = root.querySelector('.result-wrapper');
         if (result_wrapper) {
             result_wrapper.innerHTML = '<pre class="result">Loading...</pre>';
         } else {
-            const main = document.querySelector('main');
             result_wrapper = document.createElement('div');
             result_wrapper.classList.add('result-wrapper');
             result_wrapper.innerHTML = '<pre class="result">Loading...</pre>';
-            main.appendChild(result_wrapper);
+            root.appendChild(result_wrapper);
         }
 
         const res = await fetch(`/cors/${query}`)
