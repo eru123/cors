@@ -6,9 +6,11 @@ const bodyParser = require('body-parser');
 const rootdir = path.resolve(__dirname, '..');
 const endpoint = require('./handlers/endpoint');
 const limiter = require('./handlers/limiter');
+const cors = require('cors');
 
 app.use(bodyParser.json());
 app.use(limiter);
+app.use(cors());
 app.all('/cors/:endpoint', endpoint);
 
 const publicdir = path.join(rootdir, 'public');
