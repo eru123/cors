@@ -24,6 +24,18 @@
             <button type="submit">GO</button>
         </form>
         <div id="result-root"></div>
+        <section>
+            <h3>Disclaimer</h3>
+            <p>
+                This is page is only for demonstration and development purposes. To avoid abuse, the proxy is rate
+                limited to 60 request per minute per IP address.
+            </p>
+        </section>
+        <section>
+            <h3>CURL Example</h3>
+            <code>curl -X POST -H "Content-Type: application/json" -d '{"name":"John"}' https://proxy.skiddph.com/cors/{URLHere}</code>
+            <p>Please take note that the url must be URLEncoded to avoid issues</p>
+        </section>
     </main>
     <script src="main.js"></script>
 </body>
